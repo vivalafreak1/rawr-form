@@ -1,0 +1,132 @@
+<html lang="id" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="form_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <title>Form</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--color-white);
+      margin: 0;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      background: var(--color-darkblue);
+      background-image: linear-gradient(115deg,
+          rgba(18, 18, 47, 0.8),
+          rgba(13, 13, 32, 0.85)),
+        url(https://www.teahub.io/photos/full/18-187226_best-steam-profile-backgrounds.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style>
+</head>
+<div class="container">
+  <header class="header">
+    <h1 id="title" class="text-center">Form Survey Pemain Game Souls-Like</h1>
+    <p id="description" class="description text-center">
+      Terima kasih atas waktunya
+    </p>
+  </header>
+  <form id="survey-form" action="thanks.php" method="post">
+    <div class="form-group">
+      <label id="name-label" for="name">Nama</label>
+      <input type="text" name="username" id="name" class="form-control" placeholder="Masukkan Nama" required />
+    </div>
+    <div class="form-group">
+      <label id="email-label" for="email">Email</label>
+      <input type="email" name="email" id="email" class="form-control" placeholder="Masukkan Email" required />
+    </div>
+    <div class="form-group">
+      <label id="number-label" for="number">Umur<span class="clue">(optional)</span></label>
+      <input type="number" name="age" id="number" min="10" max="99" class="form-control" placeholder="Umur" />
+    </div>
+    <div class="form-group">
+      <p>Mengapa Anda menyukai tipe game Souls-Like?</p>
+      <select id="dropdown" name="role" class="form-control" required>
+        <option disabled selected value>Pilih Alasan</option>
+        <option value="fun">Menyenangkan</option>
+        <option value="challenging">Menantang</option>
+        <option value="myself">Saya suka mendorong diri saya sendiri</option>
+        <option value="preferNo">Memilih untuk tidak memberi tahu</option>
+        <option value="other">Lainnya</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <p>Berapa banyak games souls-like yang pernah dimainkan?</p>
+      <div class="choice-group1">
+        <label>
+          <input name="user-recommend" value="definitely" type="radio" class="input-radio" checked />1-3 Games</label>
+        <label>
+          <input name="user-recommend" value="maybe" type="radio" class="input-radio" />4-5 Games</label>
+        <label><input name="user-recommend" value="not-sure" type="radio" class="input-radio" />5+ Games</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <p>
+        Siapa developer favorit anda?
+      </p>
+      <select id="most-like" name="mostLike" class="form-control" required>
+        <option disabled selected value>Pilih opsi berikut</option>
+        <option value="bandai">Bandai Namco</option>
+        <option value="fromsoftware">FromSoftware</option>
+        <option value="koei">Koei Tecmo Games</option>
+        <option value="indie">Indie Developer</option>
+        <option value="other">Other</option>
+
+      </select>
+    </div>
+    <div class="form-group">
+      <p>
+        Game mana yang anda sukai?
+        <span class="clue">(Anda bisa memilih lebih dari satu opsi)</span>
+      </p>
+      <div class="choice-group2">
+        <label><input name="prefer" value="demon-souls" type="checkbox" class="input-checkbox" />Demon Souls</label>
+        <label>
+          <input name="prefer" value="nioh" type="checkbox" class="input-checkbox" />Nioh</label>
+        <label><input name="prefer" value="dark-souls1" type="checkbox" class="input-checkbox" />Dark Souls 1</label>
+        <label><input name="prefer" value="nioh2" type="checkbox" class="input-checkbox" />Nioh 2</label>
+        <label><input name="prefer" value="dark-souls2" type="checkbox" class="input-checkbox" />Dark Souls 2</label>
+        <label><input name="prefer" value="code-vein" type="checkbox" class="input-checkbox" />Code Vein</label>
+        <label><input name="prefer" value="dark-souls3" type="checkbox" class="input-checkbox" />Dark Souls 3</label>
+        <label><input name="prefer" value="bloordborne" type="checkbox" class="input-checkbox" />Bloodborne</label>
+        <label><input name="prefer" value="the-surge" type="checkbox" class="input-checkbox" />The Surge</label>
+        <label><input name="prefer" value="sekiro" type="checkbox" class="input-checkbox" />Sekiro: Shadow Die
+          Twice</label>
+        <label><input name="prefer" value="the-surge2" type="checkbox" class="input-checkbox" />The Surge 2</label>
+        <label><input name="prefer" value="other" type="checkbox" class="input-checkbox" />Other</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <p>Apakah ada komentar atau sugesti?</p>
+      <textarea id="comments" class="input-textarea" name="comment"
+        placeholder="Masukkan komentar Anda disini..."></textarea>
+    </div>
+    <label id="agree"><input name="prefer" value="the-surge2" type="checkbox" class="input-checkbox" required />By
+      Dengan meng-klik ini anda setuju bahwa data yang diisi akan direkam.</label>
+    </select>
+    <div class="form-group">
+      <button type="submit" name="submit_button" id="submit" class="submit-button">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+
+</html>
