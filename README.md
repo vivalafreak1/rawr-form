@@ -1,5 +1,5 @@
 # rawr-form
-tugas kelompok 1 pemrograman web
+Tugas Kkelompok 1 Pemrograman Web
 
 + Ahmad Aris Munandar (50420074)
 + Arief Taufik Rahman (50420221)
